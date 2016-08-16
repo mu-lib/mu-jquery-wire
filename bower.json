@@ -1,0 +1,17 @@
+{
+  "name": "mu-jquery-wire",
+  "authors": [
+    "Mikael Karon <mikael@karon.se>"
+  ],
+  "description": "A jQuery plugin for wiring modules from .data to an element",
+  "main": "jquery.wire.js",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
