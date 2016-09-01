@@ -9,32 +9,31 @@
     return new C();
   }
 
-  $.fn.wire = function(attr) {
-    var self = this;
-    var args = slice.call(arguments, 1);
+  $.fn.wire = function(attr, factory) {
+    var args = slice.call(arguments, 2);
 
-    return self
+    return $.when.apply(null, this
       .find("[" + attr + "]")
-      .attr(attr, function(index, modules) {
+      .map(function(index, element) {
         var $element = $(this);
 
-        (modules || "")
+        return $.when.apply(null, ($element.attr(attr) || "")
           .split(/\s+/)
-          .forEach(function(module) {
-            var c = self.data(module);
+          .map(function(module) {
+            return $.when(factory.call($element, module)).then(function(c) {
+              switch ($.type(c)) {
+                case "function":
+                  return construct(c, [$element, module].concat(args));
+                  break;
 
-            switch ($.type(c)) {
-              case "function":
-                construct(c, [$element, module].concat(args));
-                break;
+                case "undefined":
+                  break;
 
-              case "undefined":
-                break;
-
-              default:
-                throw new Error(c + " is not a supported type");
-            }
-          });
-      });
+                default:
+                  throw new Error(c + " is not a supported type");
+              }
+            });
+          }));
+      }));
   };
 })(jQuery, Array.prototype.slice);
