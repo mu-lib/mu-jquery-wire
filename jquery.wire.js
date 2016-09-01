@@ -1,4 +1,14 @@
-(function($, slice) {
+(function(root, factory) {
+  if (typeof define === "function" && define.amd) {
+    define(["jquery"], factory);
+  } else if (typeof module === "object" && module.exports) {
+    module.exports = factory(require("jquery"));
+  } else {
+    root["mu-jquery-wire/jquery.wire"], factory(root.jQuery);
+  }
+}(this, function($) {
+  var slice = Array.prototype.slice;
+
   function construct(F, args) {
     function C() {
       return F.apply(this, args);
@@ -9,7 +19,7 @@
     return new C();
   }
 
-  $.fn.wire = function(attr, factory) {
+  return $.fn.wire = function(attr, factory) {
     var args = slice.call(arguments, 2);
 
     return $.when.apply(null, this
@@ -36,4 +46,4 @@
           }));
       }));
   };
-})(jQuery, Array.prototype.slice);
+}));
