@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/mu-lib/mu-jquery-wire/compare/v2.0.0...v3.0.0) (2016-09-02)
+
+
+### Features
+
+* don't set $.fn.wire ([2b9e369](https://github.com/mu-lib/mu-jquery-wire/commit/2b9e369))
+
+
+### BREAKING CHANGES
+
+* From this version it's prefferred that users call wire
+via `wire.call($element, attr, callback). Users who want the old behaviour
+can use `$.fn.wire = require("mu-jquery-wire/jquery.wire");` or equivalent.
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/mu-lib/mu-jquery-wire/compare/v1.1.1...v2.0.0) (2016-09-02)
 
