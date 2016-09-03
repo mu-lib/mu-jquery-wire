@@ -6,7 +6,7 @@
   } else {
     root["mu-jquery-wire/jquery.wire"] = factory(root.jQuery);
   }
-}(this, function($) {
+})(this, function($) {
   return function(attr, callback) {
     return $.when.apply(null, this.map(function(i, element) {
       return $.when.apply(null, ($(element).attr(attr) || "")
@@ -16,4 +16,4 @@
         }));
     }));
   };
-}));
+});
