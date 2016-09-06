@@ -7,12 +7,16 @@
     root["mu-jquery-wire/jquery.wire"] = factory(root.jQuery);
   }
 })(this, function($) {
-  return function(attr, callback) {
+  var slice = Array.prototype.slice;
+
+  return function(input, callback) {
+    var args = slice.call(arguments, 2);
+
     return $.when.apply(null, this.map(function(i, element) {
-      return $.when.apply(null, ($(element).attr(attr) || "")
-        .split(/\s+/)
-        .map(function(module, index) {
-          return $.when(callback.call(element, module, index));
+      return $.when.apply(null, input
+        .apply(element, args)
+        .map(function(output, index) {
+          return $.when(callback.call(element, output, index));
         }));
     }));
   };
