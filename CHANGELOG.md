@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.0.0"></a>
+# [4.0.0](https://github.com/mu-lib/mu-jquery-wire/compare/v3.0.1...v4.0.0) (2016-09-06)
+
+
+### Features
+
+* externalize seed function ([d273815](https://github.com/mu-lib/mu-jquery-wire/commit/d273815))
+
+
+### BREAKING CHANGES
+
+* Previously the first attribute was the name of an
+attribute, now this should be a function that returns an array where each
+element will be processed with `callback`.
+
+
+
 <a name="3.0.1"></a>
 ## [3.0.1](https://github.com/mu-lib/mu-jquery-wire/compare/v3.0.0...v3.0.1) (2016-09-03)
 
