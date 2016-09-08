@@ -1,12 +1,16 @@
-(function(root, factory) {
+(function(modules, root, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["jquery"], factory);
+    define(modules, factory);
   } else if (typeof module === "object" && module.exports) {
-    module.exports = factory(require("jquery"));
+    module.exports = factory.apply(root, modules.map(require));
   } else {
-    root["mu-jquery-wire/jquery.wire"] = factory(root.jQuery);
+    root["mu-jquery-wire/jquery.wire"] = factory.apply(root, modules.map(function(m) {
+      return {
+        "jquery": root.jQuery
+      }[m] || root[m];
+    }));
   }
-})(this, function($) {
+})(["jquery"], this, function($) {
   var slice = Array.prototype.slice;
   var resolved = $.Deferred(function (dfd) {
     dfd.resolve();
