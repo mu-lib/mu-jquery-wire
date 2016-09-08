@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.0.2"></a>
+## [4.0.2](https://github.com/mu-lib/mu-jquery-wire/compare/v4.0.1...v4.0.2) (2016-09-08)
+
+
+### Bug Fixes
+
+* UMD fixes ([e010b13](https://github.com/mu-lib/mu-jquery-wire/commit/e010b13))
+
+
+
 <a name="4.0.1"></a>
 ## [4.0.1](https://github.com/mu-lib/mu-jquery-wire/compare/v4.0.0...v4.0.1) (2016-09-06)
 
