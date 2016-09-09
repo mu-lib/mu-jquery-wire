@@ -21,9 +21,11 @@
     var self = this;
 
     return self.length === 0 ? resolved : $.when.apply(null, self.map(function(i, element) {
-      return $.when.apply(null, $.map(input.apply(self, [element, i].concat(args)), function(index, output) {
-        return $.when(callback.call(self, element, output, index));
-      }));
+      return $.when(input.apply(self, [element, i].concat(args))).then(function (_input) {
+        return $.when.apply(null, $.map(_input, function(output, index) {
+          return $.when(callback.call(self, element, output, index));
+        }));
+      });
     }));
-  };
+  }
 });
