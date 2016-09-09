@@ -18,13 +18,12 @@
 
   return function(input, callback) {
     var args = slice.call(arguments, 2);
+    var self = this;
 
-    return this.length === 0 ? resolved : $.when.apply(null, this.map(function(i, element) {
-      return $.when.apply(null, input
-        .apply(element, args)
-        .map(function(output, index) {
-          return $.when(callback.call(element, output, index));
-        }));
+    return self.length === 0 ? resolved : $.when.apply(null, self.map(function(i, element) {
+      return $.when.apply(null, $.map(input.apply(self, [element, i].concat(args)), function(index, output) {
+        return $.when(callback.call(self, element, output, index));
+      }));
     }));
   };
 });
