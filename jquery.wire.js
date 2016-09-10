@@ -20,12 +20,18 @@
     var args = slice.call(arguments, 2);
     var self = this;
 
-    return self.length === 0 ? resolved : $.when.apply(null, self.map(function(i, element) {
-      return $.when(input.apply(self, [element, i].concat(args))).then(function (_input) {
-        return $.when.apply(null, $.map(_input, function(output, index) {
-          return $.when(callback.call(self, element, output, index));
-        }));
-      });
+    return self.length === 0
+      ? resolved :
+      $.when.apply(null, self.map(function(i, element) {
+        return $.when(input.apply(self, [element, i].concat(args))).then(function (_input) {
+          return _input === undefined || _input.length === 0
+            ? resolved
+            : $.when.apply(null, $.map($.isArray(_input) ? _input : [_input], function(output, index) {
+              return $.when(callback.call(self, element, index, output)).then(function(result) {
+                return arguments.length > 1 ? slice.call(arguments) : result || output;
+              });;
+          }));
+        });
     }));
   }
 });
