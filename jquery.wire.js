@@ -28,7 +28,9 @@
             ? resolved
             : $.when.apply(null, $.map($.isArray(_input) ? _input : [_input], function(output, index) {
               return $.when(callback.call(self, element, index, output)).then(function(result) {
-                return arguments.length > 1 ? slice.call(arguments) : result || output;
+                return arguments.length > 1
+                  ? slice.call(arguments)
+                  : result || output;
               });;
           }));
         });
