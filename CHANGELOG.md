@@ -2,6 +2,35 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.0"></a>
+# [5.0.0](https://github.com/mu-lib/mu-jquery-wire/compare/v4.0.2...v5.0.0) (2016-09-12)
+
+
+### Bug Fixes
+
+* results fom callback ([b0990ab](https://github.com/mu-lib/mu-jquery-wire/commit/b0990ab))
+
+
+### Features
+
+* New signatures and scope for input and callback ([09ea7d1](https://github.com/mu-lib/mu-jquery-wire/commit/09ea7d1))
+
+
+* Qunit (#2) ([fc27d8f](https://github.com/mu-lib/mu-jquery-wire/commit/fc27d8f))
+
+
+### BREAKING CHANGES
+
+* new signatures is (input|callback)(element, index,
+extra...)
+
+* bug: Work around arguments[0] = undefined bug
+* input and callback are now passed element and index as
+input parameters. The scope of each also changes to the originating
+element.
+
+
+
 <a name="4.0.2"></a>
 ## [4.0.2](https://github.com/mu-lib/mu-jquery-wire/compare/v4.0.1...v4.0.2) (2016-09-08)
 
