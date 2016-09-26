@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.2"></a>
+## [5.0.2](https://github.com/mu-lib/mu-jquery-wire/compare/v5.0.1...v5.0.2) (2016-09-26)
+
+
+### Bug Fixes
+
+* Use self.constructor() vs. $() ([1bd225f](https://github.com/mu-lib/mu-jquery-wire/commit/1bd225f))
+
+
+
 <a name="5.0.1"></a>
 ## [5.0.1](https://github.com/mu-lib/mu-jquery-wire/compare/v5.0.0...v5.0.1) (2016-09-13)
 
