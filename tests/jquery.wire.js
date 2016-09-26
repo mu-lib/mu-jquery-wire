@@ -45,7 +45,7 @@
 
     return wire.call($elements,
       function ($element, index) {
-        assert.ok($element.is($elements[index]), "element should match $elements[" + index + "]");
+        assert.ok($element.is($elements.eq(index)), "$element matches $elements[" + index + "]");
       },
       function () {
         assert.notOk(true, "should never be called");
