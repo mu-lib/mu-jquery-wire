@@ -17,10 +17,13 @@
   },
   "homepage": "https://github.com/mu-lib/mu-jquery-wire#readme",
   "dependencies": {
+  },
+  "peerDependencies": {
     "jquery": "^3.1.0"
   },
   "devDependencies": {
-    "qunit": "^2.0.1",
+    "qunitjs": "^2.0.1",
+    "jquery": "^3.1.0",
     "standard-version": "^2.4.0"
   }
 }
