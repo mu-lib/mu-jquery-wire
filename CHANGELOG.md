@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.4"></a>
+## [5.0.4](https://github.com/mu-lib/mu-jquery-wire/compare/v5.0.3...v5.0.4) (2016-10-19)
+
+
+### Bug Fixes
+
+* **packaging:** jQuery versions ([2e9a75e](https://github.com/mu-lib/mu-jquery-wire/commit/2e9a75e))
+* **wire:** use provided jQuery ([aef471b](https://github.com/mu-lib/mu-jquery-wire/commit/aef471b))
+
+
+
 <a name="5.0.3"></a>
 ## [5.0.3](https://github.com/mu-lib/mu-jquery-wire/compare/v5.0.2...v5.0.3) (2016-10-12)
 
