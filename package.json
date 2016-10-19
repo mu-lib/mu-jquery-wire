@@ -18,11 +18,11 @@
   "homepage": "https://github.com/mu-lib/mu-jquery-wire#readme",
   "dependencies": {},
   "peerDependencies": {
-    "jquery": "^3.1.0"
+    "jquery": "^3.0.0"
   },
   "devDependencies": {
     "qunitjs": "^2.0.1",
-    "jquery": "^3.1.0",
+    "jquery": "^3.1.1",
     "standard-version": "^2.4.0"
   }
 }
