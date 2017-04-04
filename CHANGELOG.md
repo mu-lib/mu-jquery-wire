@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.6"></a>
+## [5.0.6](https://github.com/mu-lib/mu-jquery-wire/compare/v5.0.5...v5.0.6) (2017-04-04)
+
+
+### Bug Fixes
+
+* **packaging:** bumped deps and remove unused module ([29e3c14](https://github.com/mu-lib/mu-jquery-wire/commit/29e3c14))
+* use $.makeArray on _input ([6bfa07c](https://github.com/mu-lib/mu-jquery-wire/commit/6bfa07c))
+
+
+
 <a name="5.0.5"></a>
 ## [5.0.5](https://github.com/mu-lib/mu-jquery-wire/compare/v5.0.4...v5.0.5) (2016-10-19)
 
