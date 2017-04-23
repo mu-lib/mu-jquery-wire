@@ -28,7 +28,7 @@
         return $.when($.isFunction(input) ? input.apply(me, [$element, i].concat(args)) : input).then(function (_input) {
           return _input === undefined || _input.length === 0
             ? resolved
-            : $.when.apply(null, $.map($.makeArray(_input), function (output, index) {
+            : $.when.apply(null, $.makeArray(_input).map(function (output, index) {
               return $.when(callback.call(me, $element, index, output)).then(function (result) {
                 return arguments.length > 1 ? slice.call(arguments) : result || output;
               });
