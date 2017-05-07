@@ -18,7 +18,7 @@
     var $ = me.constructor;
     var args = slice.call(arguments, 2);
     var resolved = $.Deferred(function (dfd) {
-      dfd.resolveWith(me);
+      dfd.resolveWith(me, [[]]);
     });
 
     return me.length === 0
